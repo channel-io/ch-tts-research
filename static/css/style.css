@@ -106,6 +106,7 @@
   
   .footer-text strong {
     font-weight: 700;
+    color: #3661E3;  /* 보라색 강조 */
   }
   /* Responsive */
   @media (max-width:860px){
