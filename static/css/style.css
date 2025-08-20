@@ -77,7 +77,12 @@
     border-radius: 12px;
     background: #f3f4f6;
   }
-    
+  .brand-logo-img {
+    height: 48px;       /* 로고 높이 */
+    width: auto;        /* 가로 비율 유지 */
+    display: block;
+  }
+  
   /* Misc */
   .divider{height:1px; background:var(--line); margin:22px 0}
   footer{color:#6b7280; font-size:.95rem; margin-top:28px}
