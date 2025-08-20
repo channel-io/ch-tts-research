@@ -1,32 +1,102 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>ch-tts-research</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ch-tts-research — Audio Comparisons</title>
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,sans-serif;
-         margin:0; padding:48px; line-height:1.6; color:#111; background:#fafafa}
-    .card{max-width:860px; margin:0 auto; background:#fff; border-radius:16px; padding:32px;
-          box-shadow:0 8px 24px rgba(0,0,0,.06)}
-    h1{margin-top:0}
-    .muted{color:#666}
-    footer{margin-top:32px; font-size:.9rem; color:#777}
+    :root{
+      --bg:#fafafa; --card:#fff; --text:#111; --muted:#666; --line:#eaeaea;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; padding:48px 20px; background:var(--bg); color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,sans-serif;
+      line-height:1.6;
+    }
+    .wrap{max-width:1000px; margin:0 auto}
+    h1{margin:0 0 8px}
+    .desc{color:var(--muted); margin:0 0 24px}
+    .section{
+      background:var(--card); border-radius:16px; padding:28px; margin:18px 0 28px;
+      box-shadow:0 8px 24px rgba(0,0,0,.06);
+    }
+    .utterance{
+      font-size:1.35rem; font-weight:600; margin:0 0 18px; padding:0 0 10px;
+      border-bottom:1px solid var(--line);
+    }
+    .grid{
+      display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:22px;
+    }
+    .cell{display:flex; flex-direction:column; align-items:center; gap:8px}
+    audio{width:100%; max-width:360px}
+    .cap{color:var(--muted); font-weight:600}
+    footer{color:#777; margin:28px 0 0; font-size:.9rem}
+    @media (max-width:820px){ .utterance{font-size:1.15rem} }
+    @media (max-width:720px){ .grid{grid-template-columns:1fr} .cell{align-items:flex-start} audio{max-width:none} }
   </style>
 </head>
 <body>
-  <main class="card">
+  <main class="wrap">
     <h1>ch-tts-research</h1>
-    <p class="muted">GitHub Pages 테스트 — 빈 HTML부터 시작</p>
+    <p class="desc">문장별 TTS 비교 — 일레븐랩스 / 슈퍼톤 / Ours</p>
 
-    <section>
-      <h2>소개</h2>
-      <p>여기에 한국어 TTS 연구 노트를 적거나, 데모 오디오 플레이어 등을 추가하면 됩니다.</p>
-      <!-- 예시 오디오 플레이어(파일을 넣으면 src만 바꿔주세요) -->
-      <!-- <audio controls src="samples/demo.wav"></audio> -->
+    <!-- ====== Row 1 ====== -->
+    <section class="section">
+      <p class="utterance">안녕하세요 채널톡 AI 에이전트 알프입니다.</p>
+      <div class="grid">
+        <figure class="cell">
+          <audio controls preload="metadata">
+            <source src="static/audios/elevenlabs_1.mp3" type="audio/mpeg" />
+            브라우저가 오디오 태그를 지원하지 않습니다.
+          </audio>
+          <figcaption class="cap">일레븐랩스</figcaption>
+        </figure>
+
+        <figure class="cell">
+          <audio controls preload="metadata">
+            <source src="static/audios/supertone_1.wav" type="audio/wav" />
+          </audio>
+          <figcaption class="cap">슈퍼톤</figcaption>
+        </figure>
+
+        <figure class="cell">
+          <audio controls preload="metadata">
+            <source src="static/audios/ours_1.wav" type="audio/wav" />
+          </audio>
+          <figcaption class="cap">Ours</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <footer>© 2025 channel.io — ICASSP TTS research</footer>
+    <!-- ====== Row 2 ====== -->
+    <section class="section">
+      <p class="utterance">서류상 이상이 있다면 알려주시면 감사하겠습니다.</p>
+      <div class="grid">
+        <figure class="cell">
+          <audio controls preload="metadata">
+            <source src="static/audios/elevenlabs_2.mp3" type="audio/mpeg" />
+          </audio>
+          <figcaption class="cap">일레븐랩스</figcaption>
+        </figure>
+
+        <figure class="cell">
+          <audio controls preload="metadata">
+            <source src="static/audios/supertone_2.wav" type="audio/wav" />
+          </audio>
+          <figcaption class="cap">슈퍼톤</figcaption>
+        </figure>
+
+        <figure class="cell">
+          <audio controls preload="metadata">
+            <source src="static/audios/ours2.wav" type="audio/wav" />
+          </audio>
+          <figcaption class="cap">Ours</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <footer>© 2025 channel.io — TTS research demo</footer>
   </main>
 </body>
 </html>
