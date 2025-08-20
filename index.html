@@ -42,6 +42,7 @@
     <!-- 듣기 비교 -->
     <section id="listen" class="listen">
       <h2>오디오 비교</h2>
+      <p class="note"></p>*전화는 8Khz이기 때문에 모두 8Khz로 변환하였습니다.</p>
 
       <div class="divider"></div>
       <!-- Row 1 -->
@@ -51,25 +52,25 @@
           <div class="col">
             <div class="label">GPT-4o-mini-tts (sage)</div>
             <audio controls preload="metadata">
-              <source src="static/audios/openai_1.wav" type="audio/wav" />
+              <source src="static/audios/openai_1_8khz.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">ElevenLabs (Multilingual v2 - Anna Kim)</div>
             <audio controls preload="metadata">
-              <source src="static/audios/elevenlabs_1.mp3" type="audio/mpeg" />
+              <source src="static/audios/elevenlabs_1_8khz.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">Supertone</div>
             <audio controls preload="metadata">
-              <source src="static/audios/supertone_1.wav" type="audio/wav" />
+              <source src="static/audios/supertone_1_8khz.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">Ours</div>
             <audio controls preload="metadata">
-              <source src="static/audios/ours_1.wav" type="audio/wav" />
+              <source src="static/audios/ours_1_8khz.wav" type="audio/wav" />
             </audio>
           </div>
         </div>
@@ -83,25 +84,25 @@
           <div class="col">
             <div class="label">GPT-4o-mini-tts (sage)</div>
             <audio controls preload="metadata">
-              <source src="static/audios/openai_2.wav" type="audio/wav" />
+              <source src="static/audios/openai_2_8khz.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">ElevenLabs (Multilingual v2 - Anna Kim)</div>
             <audio controls preload="metadata">
-              <source src="static/audios/elevenlabs_2.mp3" type="audio/mpeg" />
+              <source src="static/audios/elevenlabs_2_8khz.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">Supertone</div>
             <audio controls preload="metadata">
-              <source src="static/audios/supertone_2.wav" type="audio/wav" />
+              <source src="static/audios/supertone_2_8khz.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">Ours</div>
             <audio controls preload="metadata">
-              <source src="static/audios/ours2.wav" type="audio/wav" />
+              <source src="static/audios/ours_2_8khz.wav" type="audio/wav" />
             </audio>
           </div>
         </div>
@@ -115,25 +116,25 @@
           <div class="col">
             <div class="label">GPT-4o-mini-tts (sage)</div>
             <audio controls preload="metadata">
-              <source src="static/audios/openai_3.wav" type="audio/wav" />
+              <source src="static/audios/openai_3_8khz.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">ElevenLabs (Multilingual v2 - Anna Kim)</div>
             <audio controls preload="metadata">
-              <source src="static/audios/elevenlabs_3.mp3" type="audio/mpeg" />
+              <source src="static/audios/elevenlabs_3_8khz.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">Supertone</div>
             <audio controls preload="metadata">
-              <source src="static/audios/supertone_3.wav" type="audio/wav" />
+              <source src="static/audios/supertone_3_8khz.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">Ours</div>
             <audio controls preload="metadata">
-              <source src="static/audios/ours3.wav" type="audio/wav" />
+              <source src="static/audios/ours_3_8khz.wav" type="audio/wav" />
             </audio>
           </div>
         </div>
@@ -141,7 +142,34 @@
     </section>
 
     <div class="divider"></div>
-    <footer>© 2025 channel.io — TTS research demo</footer>
+    <div class="footer-text">
+      <p>
+        안녕하세요. 채널톡 AI팀 스피치 조직의 <strong>Robin(신승윤)</strong>,
+        <strong>Belle(김지우)</strong>, <strong>Day(안동하)</strong>,
+        <strong>Luke(전승욱)</strong>입니다. 저희는
+        AI 전화 상담을 위한 <strong>TTS (Text‑to‑Speech)</strong> 모델을 연구·개발하고 있습니다.
+      </p>
+    
+      <p>여러 상용 TTS가 이미 존재하지만, 저희가 자체 모델을 만드는 이유는 명확합니다.</p>
+      <ul>
+        <li><strong>상담사형 프로소디</strong>의 일관성과 자연스러움이 부족합니다.</li>
+        <li>
+          한국어 특유의 <strong>상식 기반 발화</strong> 처리에 취약합니다
+          (한·영 혼용, 날짜·시간, 주문/고유번호, URL·이메일 등).
+        </li>
+      </ul>
+    
+      <p>
+        이를 개선하기 위해 공개/합성 데이터를 활용해 <strong>SFT(Supervised Fine-Tuning)</strong>을 수행하고,
+        <strong>GRPO,DPO 등 RL</strong>을 추가 수행하여 실제 상담 시나리오에 적합한
+        <strong>상담사형 발화(prosody)</strong>를 구현하는 방법을 제안합니다.
+        본 페이지는 그 결과의 일부를 비교 청취 및 설명할 수 있도록 구성했습니다.
+      </p>
+    </div>
+    
+
+    <div class="divider"></div>
+    <footer>© 2025 channel.io — Channel TTS: Towards Real-World Prosody for Conversational Agents</footer>
   </div>
 
   <script>
