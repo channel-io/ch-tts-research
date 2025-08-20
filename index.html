@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ch-tts-research — Audio Comparisons</title>
+  <title>Channel TTS Demo — Audio Comparisons</title>
   <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="static/css/style.css">
 </head>
@@ -12,26 +12,34 @@
     <!-- Header -->
     <header class="nav">
       <div class="brand">
-        <img src="static/img/ch-logo-white-ko.png" alt="Channel.io logo" class="brand-logo-img" />
+        <img src="static/img/ch-logo-ko.png" alt="채널톡 로고" class="brand-logo-img" />
       </div>
       <div class="nav-actions">
         <a class="btn" href="https://channel.io" target="_blank" rel="noopener">더 알아보기 →</a>
       </div>
     </header>
-    
 
-    <!-- Hero -->
+    <!-- Hero (논문 타이틀 스타일) -->
     <section class="hero">
-      <h1>Channel TTS 데모비교</h1>
-      <p>OpenAI · 일레븐랩스 · 슈퍼톤 · Ours(Channel TTS)를 같은 문장으로 비교 청취해 보세요.</p>
-      <div class="wave" aria-hidden="true">
-        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <h1 class="title">Channel TTS: Towards Real-World Prosody for Conversational Agents</h1>
+    
+      <p class="authors">
+        <a href="https://seungyounshin.github.io" target="_blank">Seungyoun Shin</a><sup>1</sup>, 
+        <a href="https://skswldndi.github.io" target="_blank">Jiwoo Kim</a><sup>1</sup>, 
+        Dongha Ahn<sup>1</sup>, 
+        Sungwook Jeon<sup>1</sup>
+      </p>
+      <p class="affiliation"><sup>1</sup>Channel Corp.</p>
+    
+      <div class="links">
+        <a class="link-btn" href="#">🎧 Demo</a>
+        <a class="link-btn" href="#">📄 Paper</a>
+        <a class="link-btn" href="#">💻 Code</a>
       </div>
     </section>
 
-    <!-- Compact Listen -->
+
+    <!-- 듣기 비교 -->
     <section id="listen" class="listen">
       <h2>듣기 비교</h2>
 
@@ -96,6 +104,38 @@
           </div>
         </div>
       </div>
+
+      <!-- Row 3 -->
+      <div class="utterance-block">
+        <p class="utt">FAQ나 도큐먼트에서 '홈페이지 주소를 입력하거나 이미지를 등록하면 텍스트, 이미지 등을 크롤링하여 답변하는 기능'에 대한 정보가 없어 조금 더 자세한 설명을 부탁드려도 될까요?</p>
+        <div class="audios">
+          <div class="col">
+            <div class="label">GPT-4o-mini-tts (sage)</div>
+            <!-- 현재 저장된 openai_* 파일이 1,2만 있어서 임시로 2를 재사용합니다. openai_3.wav가 생기면 파일명만 바꿔주세요. -->
+            <audio controls preload="metadata">
+              <source src="static/audios/openai_2.wav" type="audio/wav" />
+            </audio>
+          </div>
+          <div class="col">
+            <div class="label">ElevenLabs</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/elevenlabs_3.mp3" type="audio/mpeg" />
+            </audio>
+          </div>
+          <div class="col">
+            <div class="label">Supertone</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/supertone_3.wav" type="audio/wav" />
+            </audio>
+          </div>
+          <div class="col">
+            <div class="label">Ours</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/ours3.wav" type="audio/wav" />
+            </audio>
+          </div>
+        </div>
+      </div>
     </section>
 
     <div class="divider"></div>
@@ -103,7 +143,7 @@
   </div>
 
   <script>
-    // 하나 재생 시 나머지는 정지
+    // 하나 재생 시 나머지는 정지 (겹침 방지)
     const players = Array.from(document.querySelectorAll('audio'));
     players.forEach(a => a.addEventListener('play', () =>
       players.forEach(b => { if (b !== a) b.pause(); })
