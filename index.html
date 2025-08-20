@@ -5,80 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ch-tts-research — Audio Comparisons</title>
   <meta name="color-scheme" content="light dark">
-  <style>
-    :root{
-      --bg1:#fdd3e6; --bg2:#b9e0ff; --bg3:#f3ccff;
-      --text:#0f172a; --muted:#6b7280; --line:#e5e7eb;
-      --card:#ffffff90; --card-solid:#fff;
-      --radius:18px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,sans-serif;
-      color:var(--text); line-height:1.6;
-      background:radial-gradient(1200px 700px at 25% 10%, var(--bg1), transparent 60%),
-                 radial-gradient(1200px 700px at 85% 15%, var(--bg2), transparent 60%),
-                 radial-gradient(1400px 700px at 50% 80%, var(--bg3), transparent 60%),
-                 #fafafa;
-    }
-    .container{max-width:1100px; margin:0 auto; padding:28px 20px 56px}
-    /* Header */
-    .nav{
-      display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:12px;
-    }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
-    .brand-logo{
-      width:36px; height:36px; border-radius:12px; background:#6d6dff;
-      display:grid; place-items:center; color:#fff; font-weight:900;
-      box-shadow:0 8px 24px rgba(109,109,255,.35);
-    }
-    .nav-actions{display:flex; gap:10px}
-    .btn{
-      appearance:none; border:0; padding:10px 14px; border-radius:12px; cursor:pointer;
-      font-weight:600; background:#111; color:#fff; transition:.2s transform,.2s opacity;
-    }
-    .btn.secondary{background:#ffffff; color:#111; border:1px solid #e6e6e6}
-    .btn:hover{transform:translateY(-1px)}
-    /* Hero */
-    .hero{
-      border-radius:28px; padding:46px 28px; margin-top:10px; margin-bottom:28px;
-      backdrop-filter: blur(12px); background:var(--card);
-      box-shadow:0 18px 50px rgba(0,0,0,.08);
-      position:relative; overflow:hidden;
-    }
-    .hero h1{margin:0 0 8px; font-size:clamp(28px,3.2vw,44px)}
-    .hero p{margin:0 0 18px; color:var(--muted)}
-    .wave{
-      position:absolute; inset:auto 24px 18px 24px; height:6px; opacity:.5; display:flex; gap:8px; pointer-events:none;
-    }
-    .dot{width:6px; height:6px; border-radius:999px; background:#111; opacity:.18; animation:updown 1.8s ease-in-out infinite}
-    .dot:nth-child(odd){opacity:.28}
-    .dot:nth-child(3n){animation-duration:2.1s}
-    @keyframes updown{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-    /* Section card */
-    .section{
-      background:var(--card-solid); border-radius:var(--radius); padding:22px 20px; margin:18px 0 26px;
-      box-shadow:0 10px 28px rgba(0,0,0,.06);
-    }
-    .prompt{
-      font-weight:700; margin:0 0 10px; padding-bottom:12px; border-bottom:1px solid var(--line);
-      font-size:clamp(18px,2.2vw,22px)
-    }
-    .cols{
-      display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; padding-top:6px;
-    }
-    .col{display:flex; flex-direction:column; gap:8px}
-    .col h4{margin:0; font-size:16px; text-align:center}
-    audio{width:100%; border-radius:20px; background:#f3f4f6}
-    .divider{height:1px; background:var(--line); margin:22px 0}
-    footer{color:#6b7280; font-size:.95rem; margin-top:28px}
-    /* Responsive */
-    @media (max-width:860px){
-      .cols{grid-template-columns:1fr}
-      .col h4{text-align:left}
-    }
-  </style>
+  <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
   <div class="container">
@@ -89,7 +16,7 @@
         <div>ch‑tts‑research</div>
       </div>
       <div class="nav-actions">
-        <a class="btn secondary" href="#section1">데모 듣기</a>
+        <a class="btn secondary" href="#listen">데모 듣기</a>
         <a class="btn" href="https://channel.io" target="_blank" rel="noopener">더 알아보기 →</a>
       </div>
     </header>
@@ -99,76 +26,77 @@
       <h1>고객 상담의 미래는 AI입니다</h1>
       <p>일레븐랩스 · 슈퍼톤 · Ours를 같은 문장으로 비교 청취해 보세요.</p>
       <div class="wave" aria-hidden="true">
-        <!-- 간단한 파형 도트 -->
         <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
         <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
         <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
       </div>
     </section>
 
-    <!-- Row 1 -->
-    <section class="section" id="section1">
-      <p class="prompt">안녕하세요 채널톡 AI 에이전트 알프입니다.</p>
-      <div class="cols">
-        <div class="col">
-          <h4>ElevenLabs</h4>
-          <audio controls preload="metadata">
-            <source src="static/audios/elevenlabs_1.mp3" type="audio/mpeg" />
-          </audio>
-        </div>
-        <div class="col">
-          <h4>Supertone</h4>
-          <audio controls preload="metadata">
-            <source src="static/audios/supertone_1.wav" type="audio/wav" />
-          </audio>
-        </div>
-        <div class="col">
-          <h4>Ours</h4>
-          <audio controls preload="metadata">
-            <source src="static/audios/ours_1.wav" type="audio/wav" />
-          </audio>
+    <!-- Compact Listen -->
+    <section id="listen" class="listen">
+      <h2>듣기 비교</h2>
+
+      <!-- Row 1 -->
+      <div class="utterance-block">
+        <p class="utt">안녕하세요 채널톡 AI 에이전트 알프입니다.</p>
+        <div class="audios">
+          <div class="col">
+            <div class="label">ElevenLabs</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/elevenlabs_1.mp3" type="audio/mpeg" />
+            </audio>
+          </div>
+          <div class="col">
+            <div class="label">Supertone</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/supertone_1.wav" type="audio/wav" />
+            </audio>
+          </div>
+          <div class="col">
+            <div class="label">Ours</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/ours_1.wav" type="audio/wav" />
+            </audio>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- Row 2 -->
-    <section class="section">
-      <p class="prompt">서류상 이상이 있다면 알려주시면 감사하겠습니다.</p>
-      <div class="cols">
-        <div class="col">
-          <h4>ElevenLabs</h4>
-          <audio controls preload="metadata">
-            <source src="static/audios/elevenlabs_2.mp3" type="audio/mpeg" />
-          </audio>
-        </div>
-        <div class="col">
-          <h4>Supertone</h4>
-          <audio controls preload="metadata">
-            <source src="static/audios/supertone_2.wav" type="audio/wav" />
-          </audio>
-        </div>
-        <div class="col">
-          <h4>Ours</h4>
-          <audio controls preload="metadata">
-            <source src="static/audios/ours2.wav" type="audio/wav" />
-          </audio>
+      <!-- Row 2 -->
+      <div class="utterance-block">
+        <p class="utt">서류상 이상이 있다면 알려주시면 감사하겠습니다.</p>
+        <div class="audios">
+          <div class="col">
+            <div class="label">ElevenLabs</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/elevenlabs_2.mp3" type="audio/mpeg" />
+            </audio>
+          </div>
+          <div class="col">
+            <div class="label">Supertone</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/supertone_2.wav" type="audio/wav" />
+            </audio>
+          </div>
+          <div class="col">
+            <div class="label">Ours</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/ours2.wav" type="audio/wav" />
+            </audio>
+          </div>
         </div>
       </div>
     </section>
 
     <div class="divider"></div>
-
     <footer>© 2025 channel.io — TTS research demo</footer>
   </div>
 
   <script>
-    // 다른 플레이어 재생 시 나머지 정지(겹침 방지)
+    // 하나 재생 시 나머지는 정지
     const players = Array.from(document.querySelectorAll('audio'));
-    players.forEach(a => {
-      a.addEventListener('play', () => {
-        players.forEach(b => { if (b !== a) b.pause(); });
-      });
-    });
+    players.forEach(a => a.addEventListener('play', () =>
+      players.forEach(b => { if (b !== a) b.pause(); })
+    ));
   </script>
 </body>
 </html>
