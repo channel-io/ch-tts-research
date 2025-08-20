@@ -31,7 +31,7 @@
     text-align:center;
     padding:3.5rem 1rem 2.25rem;
     margin:18px auto 22px;
-    max-width:1300px;
+    max-width:920px;
     border-radius:22px;
     background:linear-gradient(135deg, #ffffffcf 0%, #f7fbffcf 100%);
     backdrop-filter:saturate(140%) blur(8px);
@@ -83,7 +83,16 @@
   
   .divider{height:1px; background:var(--line); margin:22px 0}
   footer{color:#6b7280; font-size:.95rem; margin-top:28px}
-  
+  .footer-text {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 0.98rem;
+    color: #273037;
+  }
+  .footer-text p { margin: 0 0 12px; }
+  .footer-text ul { margin: 0 0 12px 18px; padding: 0; }
+  .footer-text li { margin: 6px 0; }
+  .footer-text strong { font-weight: 700; }
   /* Responsive */
   @media (max-width:860px){
     .audios{grid-template-columns:1fr}
