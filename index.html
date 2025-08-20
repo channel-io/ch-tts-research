@@ -48,7 +48,7 @@
     <!-- 듣기 비교 -->
     <section id="listen" class="listen">
       <h2>오디오 비교</h2>
-      <p class="note"></p>*전화는 8Khz이기 때문에 모두 <strong>8Khz로 변환</strong>하였습니다.</p>
+      <!--<p class="note"></p>*전화는 8Khz이기 때문에 모두 <strong>8Khz로 변환</strong>하였습니다.</p>-->
 
       <div class="divider"></div>
       <!-- Row 1 -->
@@ -58,25 +58,25 @@
           <div class="col">
             <div class="label">GPT-4o-mini-tts (sage)</div>
             <audio controls preload="metadata">
-              <source src="static/audios/openai_1_8khz.wav" type="audio/wav" />
+              <source src="static/audios/openai_1.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">ElevenLabs (Multilingual v2 - Anna Kim)</div>
             <audio controls preload="metadata">
-              <source src="static/audios/elevenlabs_1_8khz.wav" type="audio/wav" />
+              <source src="static/audios/elevenlabs_1.mp3" type="audio/mpeg" />
             </audio>
           </div>
           <div class="col">
             <div class="label">Supertone</div>
             <audio controls preload="metadata">
-              <source src="static/audios/supertone_1_8khz.wav" type="audio/wav" />
+              <source src="static/audios/supertone_1.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">Ours</div>
             <audio controls preload="metadata">
-              <source src="static/audios/ours_1_8khz.wav" type="audio/wav" />
+              <source src="static/audios/ours1.wav" type="audio/wav" />
             </audio>
           </div>
         </div>
@@ -90,25 +90,25 @@
           <div class="col">
             <div class="label">GPT-4o-mini-tts (sage)</div>
             <audio controls preload="metadata">
-              <source src="static/audios/openai_2_8khz.wav" type="audio/wav" />
+              <source src="static/audios/openai_2.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">ElevenLabs (Multilingual v2 - Anna Kim)</div>
             <audio controls preload="metadata">
-              <source src="static/audios/elevenlabs_2_8khz.wav" type="audio/wav" />
+              <source src="static/audios/elevenlabs_2.mp3" type="audio/mpeg" />
             </audio>
           </div>
           <div class="col">
             <div class="label">Supertone</div>
             <audio controls preload="metadata">
-              <source src="static/audios/supertone_2_8khz.wav" type="audio/wav" />
+              <source src="static/audios/supertone_2.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">Ours</div>
             <audio controls preload="metadata">
-              <source src="static/audios/ours2_8khz.wav" type="audio/wav" />
+              <source src="static/audios/ours2.wav" type="audio/wav" />
             </audio>
           </div>
         </div>
@@ -122,25 +122,25 @@
           <div class="col">
             <div class="label">GPT-4o-mini-tts (sage)</div>
             <audio controls preload="metadata">
-              <source src="static/audios/openai_3_8khz.wav" type="audio/wav" />
+              <source src="static/audios/openai_3.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">ElevenLabs (Multilingual v2 - Anna Kim)</div>
             <audio controls preload="metadata">
-              <source src="static/audios/elevenlabs_3_8khz.wav" type="audio/wav" />
+              <source src="static/audios/elevenlabs_3.mp3" type="audio/mpeg" />
             </audio>
           </div>
           <div class="col">
             <div class="label">Supertone</div>
             <audio controls preload="metadata">
-              <source src="static/audios/supertone_3_8khz.wav" type="audio/wav" />
+              <source src="static/audios/supertone_3.wav" type="audio/wav" />
             </audio>
           </div>
           <div class="col">
             <div class="label">Ours</div>
             <audio controls preload="metadata">
-              <source src="static/audios/ours3_8khz.wav" type="audio/wav" />
+              <source src="static/audios/ours3.wav" type="audio/wav" />
             </audio>
           </div>
         </div>
@@ -186,43 +186,12 @@
       </figcaption>
     </figure>
 
+    <div class="footer-text">
+      <p>
+        위 벤치마크에는 측정하기 어려운 상담사형 발화 성능이 포함되어 있지 않습니다. 저희는 대다수가 한글로만 구성된 셋으로 internal testset을 구성하였습니다. 또한 모델 간 비교에는 8khz로 변환하지 않고 각각 Provider 모델의 원본 샘플을 사용하였습니다.
+      </p>
+    </div>
     
-    <div class="divider"></div>
-
-    <!-- 채널톡 TTS 모델 -->
-    <section id="model">
-      <h2>채널톡 TTS 모델</h2>
-      <div class="footer-text"> 
-      <p>곧 내용이 업데이트될 예정입니다.</p>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- 데이터셋 큐레이션 -->
-    <section id="dataset">
-      <h2>데이터셋 큐레이션</h2>
-      <div class="footer-text">
-        <p>Dataset 관련 세부 내용이 여기에 추가될 예정입니다.</p>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- 훈련 및 실험 -->
-    <section id="training">
-      <h2>훈련 및 실험</h2>
-      <div class="footer-text">
-      <ul>
-        <li>기본적인 훈련 단계 (예: 36,000시간)</li>
-        <li>GRPO</li>
-        <li>DPO</li>
-      </ul>
-      <p>훈련 및 실험 결과가 여기에 추가될 예정입니다.</p>
-      </div>
-    </section>
-
-    <div class="divider"></div>
 
     <!-- 참고문헌 -->
     <section id="references">
