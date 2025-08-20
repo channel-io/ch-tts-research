@@ -188,16 +188,148 @@
 
     <div class="footer-text">
       <p>
-        위 벤치마크에는 측정하기 어려운 상담사형 발화 성능이 포함되어 있지 않습니다. 저희는 대다수가 한글로만 구성된 셋으로 internal testset을 구성하였습니다. 또한 모델 간 비교에는 8khz로 변환하지 않고 각각 Provider 모델의 원본 샘플을 사용하였습니다.
+        위 벤치마크에는 측정하기 어려운 상담사형 발화 성능이 포함되어 있지 않습니다. 저희는 대다수가 한글로만 구성된 셋으로 internal testset을 구성하였습니다. 또한 모델 간 비교에는 8khz로(전화음성) 변환하지 않고 각각 Provider 모델의 원본 샘플을 사용하였습니다.
+      </p>
+      <p>
+        이런 벤치마크에서는 특히 상담의 복잡한 발화패턴 예를 들어 
+        <strong>숫자류 (주문번호, 날짜, 시간, 전화번호 등) </strong> 과 같이 조금만 어려워지면 못하는 경향이 있다. 특히 이런 류의 발화는 CER로 측정하기 어렵다는 단점이 있다.[2]
       </p>
     </div>
-    
+
+    <div class="divider"></div>
+      <!-- Row 1 -->
+      <div class="utterance-block">
+        둥둥레스토랑 성인 요금은 평일 런치 19,992원, 평일 디너 25,940원, 주말 및 공휴일은 37,771원입니다.
+        <div class="audios">
+          <div class="col right">
+            <div class="label">GPT-4o-mini-tts (sage)</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/openai_4.wav" type="audio/wav" />
+            </audio>
+          </div>
+          <div class="col wrong">
+            <div class="label">ElevenLabs (Multilingual v2 - Anna Kim)</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/ElevenLabs_2025-08-20T14_27_13_Anna Kim_pvc_sp86_s50_sb50_se47_b_m2.mp3" type="audio/mpeg" />
+            </audio>
+          </div>
+          <div class="col right">
+            <div class="label">Supertone</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/supertone_4.wav" type="audio/wav" />
+            </audio>
+          </div>
+          <div class="col right">
+            <div class="label">Ours</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/audio-2025-08-20T232626.115.wav" type="audio/wav" />
+            </audio>
+          </div>
+        </div>
+      </div>
+    <div class="divider"></div>
+      <!-- Row 2 -->
+      <div class="utterance-block">
+        한국경제는 지난해보다 0.2%p 성장하는데 그쳤습니다.
+        <div class="audios">
+          <div class="col wrong">
+            <div class="label">GPT-4o-mini-tts (sage)</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/openai_5.wav" type="audio/wav" />
+            </audio>
+          </div>
+          <div class="col wrong">
+            <div class="label">ElevenLabs (Multilingual v2 - Anna Kim)</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/ElevenLabs_2025-08-20T14_32_12_Anna Kim_pvc_sp86_s50_sb50_se47_b_m2.mp3" type="audio/mpeg" />
+            </audio>
+          </div>
+          <div class="col right">
+            <div class="label">Supertone</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/supertone_5.wav" type="audio/wav" />
+            </audio>
+          </div>
+          <div class="col right">
+            <div class="label">Ours</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/audio - 2025-08-20T233341.844.wav" type="audio/wav" />
+            </audio>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+
+      <!-- Row 3 -->
+      <div class="utterance-block">
+        안녕하세요 저는 채널톡 AI 상담사 로빈입니다. 혹시 전화주신 분의 전화번호가 011-1234-1234 맞으실까요?
+        <div class="audios">
+          <div class="col right">
+            <div class="label">GPT-4o-mini-tts (sage)</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/openai_6.wav" type="audio/wav" />
+            </audio>
+          </div>
+          <div class="col wrong">
+            <div class="label">ElevenLabs (Multilingual v2 - Anna Kim)</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/ElevenLabs_2025-08-20T14_44_14_Anna Kim_pvc_sp86_s50_sb50_se47_b_m2.mp3" type="audio/mpeg" />
+            </audio>
+          </div>
+          <div class="col wrong">
+            <div class="label">Supertone</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/supertone_6.wav" type="audio/wav" />
+            </audio>
+          </div>
+          <div class="col right">
+            <div class="label">Ours</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/audio - 2025-08-20T234618.807.wav" type="audio/wav" />
+            </audio>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+
+      <!-- Row 4 -->
+      <div class="utterance-block">
+        2025년 8월20일 ~ 2025년 8월 25일 까지 이벤트가 진행됩니다.
+        <div class="audios">
+          <div class="col wrong">
+            <div class="label">GPT-4o-mini-tts (sage)</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/openai_7.wav" type="audio/wav" />
+            </audio>
+          </div>
+          <div class="col wrong">
+            <div class="label">ElevenLabs (Multilingual v2 - Anna Kim)</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/ElevenLabs_2025-08-20T14_52_39_Anna Kim_pvc_sp86_s50_sb50_se47_b_m2.mp3" type="audio/mpeg" />
+            </audio>
+          </div>
+          <div class="col wrong">
+            <div class="label">Supertone</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/supertone_7.wav" type="audio/wav" />
+            </audio>
+          </div>
+          <div class="col right">
+            <div class="label">Ours</div>
+            <audio controls preload="metadata">
+              <source src="static/audios/audio - 2025-08-20T234900.595.wav" type="audio/wav" />
+            </audio>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
 
     <!-- 참고문헌 -->
     <section id="references">
       <h2>참고문헌</h2>
       <div class="footer-text">
         <p>[1] Ye, Zhen, et al. "Llasa: Scaling train-time and inference-time compute for llama-based speech synthesis." arXiv preprint arXiv:2502.04128 (2025).</p>
+        <p>[2] Karita, Shigeki, Richard Sproat, and Haruko Ishikawa. "Lenient evaluation of Japanese speech recognition: Modeling naturally occurring spelling inconsistency." arXiv preprint arXiv:2306.04530 (2023).</p>
       </div>
     </section>
 

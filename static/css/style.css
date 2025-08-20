@@ -81,6 +81,20 @@
   .label{text-align:center; font-weight:700; font-size:14px; color:#3a3f46}
   audio{width:100%; background:#f3f4f6; border-radius:16px}
   
+  .col.wrong {
+    border: 2px solid #e53935;   /* 빨간색 테두리 */
+    border-radius: 8px;
+    padding: 0px;
+    background-color: rgba(229, 57, 53, 0.05); /* 옅은 빨간 배경 (선택사항) */
+  }
+
+  .col.right {
+    border: 2px solid #1e88e5;   /* 파란색 */
+    border-radius: 8px;
+    padding: 0px;
+    background-color: rgba(30, 136, 229, 0.05); /* 옅은 파랑 배경 (선택) */
+  }
+
   .divider{height:1px; background:var(--line); margin:22px 0}
   .footer-text {
     max-width: 900px;
@@ -128,6 +142,14 @@
     font-size: 0.95rem;
     color: #6b7280;
     line-height: 1.5;
+  }
+
+  code {
+    background: rgba(0,0,0,0.05);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: "JetBrains Mono", "Menlo", "Consolas", monospace;
+    font-size: 0.95em;
   }
 
 
