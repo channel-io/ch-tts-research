@@ -53,18 +53,42 @@
   .listen h2{font-size:1.3rem; margin:0 0 18px}
   .utterance-block{margin:0 0 26px}
   .utt{margin:0 0 10px; font-weight:700; font-size:1.05rem}
-  .audios{display:flex; flex-wrap:wrap; gap:20px}
-  .col{flex:1 1 220px; min-width:180px; display:flex; flex-direction:column; gap:6px}
-  .label{font-size:.9rem; font-weight:700; color:#444}
-  audio{width:100%; background:#f3f4f6; border-radius:20px}
+  .audios {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 16px;
+    margin-top: 8px;
+  }  
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
   
+  .label {
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  audio {
+    width: 100%;
+    border-radius: 12px;
+    background: #f3f4f6;
+  }
+    
   /* Misc */
   .divider{height:1px; background:var(--line); margin:22px 0}
   footer{color:#6b7280; font-size:.95rem; margin-top:28px}
   
-  /* Responsive */
-  @media (max-width:860px){
-    .audios{gap:14px}
-    .col{min-width:100%}
+ /* 모바일에서 1열 */
+@media (max-width: 860px) {
+  .audios {
+    grid-template-columns: 1fr;
   }
+  .label {
+    text-align: left;
+  }
+}
   
