@@ -12,12 +12,18 @@
     <!-- Header -->
     <header class="nav">
       <div class="brand">
-        <img src="static/img/ch-logo-ko.png" alt="채널톡 로고" class="brand-logo-img" />
+        <picture class="brand-logo">
+          <!-- 다크 모드에서는 흰 로고 사용 -->
+          <source srcset="static/img/ch-logo-white-ko.png" media="(prefers-color-scheme: dark)">
+          <!-- 라이트 모드에서는 보라+검정 로고 -->
+          <img src="static/img/ch-logo-ko.png" alt="채널톡 로고" class="brand-logo-img" />
+        </picture>
       </div>
       <div class="nav-actions">
         <a class="btn" href="https://channel.io" target="_blank" rel="noopener">더 알아보기 →</a>
       </div>
     </header>
+    
 
     <!-- Hero (논문 타이틀 스타일) -->
     <section class="hero">
@@ -167,13 +173,28 @@
         이 페이지에서는 저희가 결과를 도출하기까지 직면했던 다양한 도전과제들과, 이를 해결하기 위해 어떤 고민과 노력을 기울였는지를 상세히 소개하고자 합니다.
       </p>
     </div>
+
+    <!-- Benchmark chart -->
+    <figure class="chart">
+      <img
+        src="static/img/benchmark-normal.png"
+        alt="Internal Testset (Normal) CER benchmark across models"
+        loading="lazy"
+      />
+      <figcaption>
+        <strong>그림 1.</strong> Channel TTS와 글로벌 TTS 경쟁모델들의 음성발화 벤치마크 성능 비교. 낮을수록 성능이 좋습니다. 우리 모델(<em>Ours</em>)은 GRPO 이후 가장 낮은 CER을 달성했습니다.
+      </figcaption>
+    </figure>
+
     
     <div class="divider"></div>
 
     <!-- 채널톡 TTS 모델 -->
     <section id="model">
       <h2>채널톡 TTS 모델</h2>
+      <div class="footer-text"> 
       <p>곧 내용이 업데이트될 예정입니다.</p>
+      </div>
     </section>
 
     <div class="divider"></div>
@@ -181,7 +202,9 @@
     <!-- 데이터셋 큐레이션 -->
     <section id="dataset">
       <h2>데이터셋 큐레이션</h2>
-      <p>Dataset 관련 세부 내용이 여기에 추가될 예정입니다.</p>
+      <div class="footer-text">
+        <p>Dataset 관련 세부 내용이 여기에 추가될 예정입니다.</p>
+      </div>
     </section>
 
     <div class="divider"></div>
@@ -189,12 +212,14 @@
     <!-- 훈련 및 실험 -->
     <section id="training">
       <h2>훈련 및 실험</h2>
+      <div class="footer-text">
       <ul>
         <li>기본적인 훈련 단계 (예: 36,000시간)</li>
         <li>GRPO</li>
         <li>DPO</li>
       </ul>
       <p>훈련 및 실험 결과가 여기에 추가될 예정입니다.</p>
+      </div>
     </section>
 
     <div class="divider"></div>
@@ -202,7 +227,9 @@
     <!-- 참고문헌 -->
     <section id="references">
       <h2>참고문헌</h2>
-      <p>관련 논문 및 자료들이 여기에 추가될 예정입니다.</p>
+      <div class="footer-text">
+        <p>[1] Ye, Zhen, et al. "Llasa: Scaling train-time and inference-time compute for llama-based speech synthesis." arXiv preprint arXiv:2502.04128 (2025).</p>
+      </div>
     </section>
 
 

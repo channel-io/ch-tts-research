@@ -108,9 +108,83 @@
     font-weight: 700;
     color: #3661E3;  /* 보라색 강조 */
   }
+
+  .chart {
+    max-width: 850px;     /* 조금 더 좁게 잡아서 중앙에 집중 */
+    margin: 32px auto;    /* 가운데 배치 */
+    text-align: center;   /* 내부 텍스트/캡션 중앙 정렬 */
+  }
+  .chart img {
+    display: inline-block; /* block → inline-block으로 바꿔야 text-align:center 적용됨 */
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,.08);
+    box-shadow: 0 10px 28px rgba(0,0,0,.06);
+    background: #fff;
+  }
+  .chart figcaption {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.5;
+  }
+
+
   /* Responsive */
   @media (max-width:860px){
     .audios{grid-template-columns:1fr}
     .label{text-align:left}
   }
   
+  /* ───────────── 다크 모드 대응 ───────────── */
+@media (prefers-color-scheme: dark) {
+  :root{
+    --text:#E7EAF0;
+    --muted:#A5ACB8;
+    --line:#2A2F37;
+  }
+
+  html, body { background:#0E131A; color:var(--text); }
+
+  /* 상단 로고: 흰 로고가 없다면 임시로 반전 */
+  .brand-logo-img{
+    filter: brightness(0) invert(1) contrast(1.05);
+  }
+  /* (흰색 로고 파일 쓰고 싶으면 위 줄 지우고 아래처럼 사용)
+  .brand-logo-img { content: url("../img/ch-logo-white-ko.png"); filter:none; }
+  */
+
+  /* 버튼/링크 */
+  a { color:#8EA6FF; }
+  a:hover { text-decoration: underline; }
+  .btn, .link-btn{
+    background:#1F2630; color:#F2F4F8; border:1px solid #2E3641;
+  }
+  .btn:hover, .link-btn:hover{ background:#263041; }
+
+  /* 히어로 카드: 어두운 투명 카드 */
+  .hero{
+    background: linear-gradient(135deg, #111722d9 0%, #0f1622d9 100%);
+    box-shadow: 0 16px 40px rgba(0,0,0,.35);
+  }
+  .hero .title{ color:#F3F5F8; }
+  .hero .authors a{ color:#9AB2FF; }
+  .hero .affiliation{ color:#C2C8D3; }
+
+  /* 구분선 */
+  .divider{ background:var(--line); }
+
+  /* 오디오 표 */
+  .label{ color:#C9CFDA; }
+  audio{ background:#1A202A; }
+
+  /* 본문(footer-text) */
+  .footer-text{ color:#D7DCE5; }
+  .footer-text li{ color:#D7DCE5; }
+
+  /* 강조색(중간톤: #3661E3 ↔ #572DFD 사이) */
+  .footer-text strong{
+    color:#466EE8;   /* 요청한 중간색 */
+  }
+}
