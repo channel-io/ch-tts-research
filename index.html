@@ -332,7 +332,110 @@
           가격의 경우 X,XXX원처럼 비교적 일정한 패턴이 많아 정규표현식으로 일부 대체할 수 있습니다. 
           또한 '%p'를 '퍼센트포인트'로 발화하는 것은 상식 기반 추론이 필요한 문제인데, 슈퍼톤과 저희 모델만 이를 올바르게 처리했습니다.
         </p>
+        <p>
+          뿐만 아니라, <strong>한영혼합문</strong> 발화에서도 취약한 모습을 보입니다.
+        </p>
       </div>
+
+    <div class="divider"></div>
+
+    <!-- Row 1 -->
+    <div class="utterance-block">
+      ChatGPT 는 RAG를 통해 외부 실시간 지식에 접근할 수 있습니다.
+      <div class="audios">
+        <div class="col wrong">
+          <div class="label">GPT-4o-mini-tts (sage)</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/openai_8.wav" type="audio/wav" />
+          </audio>
+        </div>
+        <div class="col wrong">
+          <div class="label">ElevenLabs (Multilingual v2 - Anna Kim)</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/ElevenLabs_2025-08-20T15_10_07_Anna Kim_pvc_sp86_s50_sb50_se47_b_m2.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+        <div class="col wrong">
+          <div class="label">Supertone</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/supertone_8.wav" type="audio/wav" />
+          </audio>
+        </div>
+        <div class="col right">
+          <div class="label">Ours</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/audio - 2025-08-21T001414.443.wav" type="audio/wav" />
+          </audio>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Row 2 -->
+    <div class="utterance-block">
+      주문번호는 HXE23872 입니다.
+      <div class="audios">
+        <div class="col right">
+          <div class="label">GPT-4o-mini-tts (sage)</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/openai_9.wav" type="audio/wav" />
+          </audio>
+        </div>
+        <div class="col wrong">
+          <div class="label">ElevenLabs (Multilingual v2 - Anna Kim)</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/ElevenLabs_2025-08-20T15_17_06_Anna Kim_pvc_sp86_s50_sb50_se47_b_m2.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+        <div class="col wrong">
+          <div class="label">Supertone</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/supertone_9.wav" type="audio/wav" />
+          </audio>
+        </div>
+        <div class="col right">
+          <div class="label">Ours</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/audio - 2025-08-21T001807.186.wav" type="audio/wav" />
+          </audio>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Row 3 -->
+    <div class="utterance-block">
+      고객님 주문하신 상품은 어제 DHL Express로 출고되었고, 현재 tracking number는 ABC123456입니다. 배송 조회는 DHL 홈페이지에서 바로 확인 가능합니다.
+      <div class="audios">
+        <div class="col right">
+          <div class="label">GPT-4o-mini-tts (sage)</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/openai_10.wav" type="audio/wav" />
+          </audio>
+        </div>
+        <div class="col wrong">
+          <div class="label">ElevenLabs (Multilingual v2 - Anna Kim)</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/ElevenLabs_2025-08-20T15_21_32_Anna Kim_pvc_sp86_s50_sb50_se47_b_m2.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+        <div class="col wrong">
+          <div class="label">Supertone</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/supertone_10.wav" type="audio/wav" />
+          </audio>
+        </div>
+        <div class="col right">
+          <div class="label">Ours</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/audio - 2025-08-21T002440.213.wav" type="audio/wav" />
+          </audio>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    
 
     <!-- 참고문헌 -->
     <section id="references">
