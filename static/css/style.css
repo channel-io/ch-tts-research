@@ -152,6 +152,33 @@
     font-size: 0.95em;
   }
 
+  /* ===== GRPO section styles ===== */
+.grpo-section { margin: 40px 0 10px; }
+.eq-card{
+  max-width: 900px;
+  margin: 12px auto 20px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(0,0,0,0.03);
+}
+.eq-title, .eq-sub{
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: #273037;
+}
+.eq { margin: 6px 0 10px; text-align: center; }
+
+/* Dark mode tweak */
+@media (prefers-color-scheme: dark){
+  .eq-card{
+    background: rgba(255,255,255,0.05);
+    border-color: #2d3748;
+  }
+  .eq-title, .eq-sub{ color: #e6e9ef; }
+}
+
+
 
   /* Responsive */
   @media (max-width:860px){
