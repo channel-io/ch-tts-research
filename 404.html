@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting…</title>
+  <meta name="robots" content="noindex" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body>
+  <p>Redirecting…</p>
+  <script>
+    (function() {
+      var path = window.location.pathname;
+      var parts = path.split('/').filter(Boolean);
+      var lastSegment = parts[parts.length - 1] || '';
+      var hasExtension = lastSegment.indexOf('.') !== -1;
+
+      // 슬래시가 없고 파일 확장자가 없는 경우: 슬래시를 붙여 동일 경로로 이동
+      if (!path.endsWith('/') && !hasExtension) {
+        var target = path + '/' + window.location.search + window.location.hash;
+        window.location.replace(target);
+        return;
+      }
+
+      // 그 외에는 리포지토리 루트로 안전하게 보냄 (예: /ch-tts-research/)
+      var base = parts.length ? '/' + parts[0] + '/' : '/';
+      var fallback = base + window.location.search + window.location.hash;
+      window.location.replace(fallback);
+    })();
+  </script>
+</body>
+</html>
+
