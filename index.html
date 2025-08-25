@@ -521,7 +521,84 @@
         </p>
       </div>
     </section>
+
+    <div class="footer-text">
+      <p>
+        이러한 한계로 인해 <strong>GRPO objective에는 상담사형 억양(prosody)을 반영한 보상</strong>이 필요합니다. 
+        그러나 prosody 자체를 정량적으로 정의하기는 모호하며, 
+        매번 Online Rollout마다 사람이 직접 평가하는 방식은 
+        <em>비효율적이고 비용 부담이 크다</em>는 문제가 있습니다.
+      </p>
+      <p>
+        이에 저희는 먼저 RLHF의 가장 기본적이고 안정적인 접근법인 
+        <strong>DPO (Direct Preference Optimization)</strong>를 적용하여 학습을 진행하였습니다.
+      </p>
+    </div>
     
+    <div class="divider"></div>
+    <div class="utterance-block">
+      기존에 재사용하던 유심은 재사용이 어렵기 때문에 통신사 유심을 구매해야합니다.
+      <div class="audios">
+        <div class="col wrong">
+          <div class="label">Loss Sample</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/dpo_loss_sample.wav" type="audio/wav" />
+          </audio>
+        </div>
+        <div class="col right">
+          <div class="label">Win Sample</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/dpo_loss_sample.wav" type="audio/wav" />
+          </audio>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="footer-text">
+      <p>
+      예를 들어 <code>기존에 재사용하던 유심은 재사용이 어렵기 때문에 통신사 유심을 구매해야합니다.</code> 라는 문장이 있을 때,
+      아래와 같이 두가지 샘플을 <span style="color: red;">Loss Sample</span> 과 <span style="color: blue;">Win Sample</span> 으로 사람이 듣고 직접 라벨링 할 수 있습니다.
+      </p>
+
+      <p>
+      이런 샘플들을 여러개 모아 훈련하게 되면 모델은 더 좋은 발화를 생성하게 됩니다.
+      </p>
+    </div>
+
+    <div class="divider"></div>
+    <div class="utterance-block">
+      안녕하세요 저는 알프입니다. 무엇을 도와드릴까요?
+      <div class="audios">
+        <div class="col">
+          <div class="label">baseline</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/alf_intro.wav" type="audio/wav" />
+          </audio>
+        </div>
+        <div class="col">
+          <div class="label">DPO</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/dpo_alf_intro.wav" type="audio/wav" />
+          </audio>
+        </div>
+        <div class="col">
+          <div class="label">GRPO</div>
+          <audio controls preload="metadata">
+            <source src="static/audios/grpo_alf_intro.wav" type="audio/wav" />
+          </audio>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    
+    <div class="footer-text">
+      <p>
+        이런 방식을 여러번 반복하면 (Online DPO 와 비슷한 방식으로) 발화의 자연스러움 뿐만 아니라 (CER) 문자 오류율도 낮아집니다.
+      </p>
+      <!--이미지-->
+      <img src="static/img/online-dpo.png" alt="Online DPO" class="online-dpo-image", style="width: 90%; height: auto; margin-top: 16px;">
+    </div>
 
     <!-- 참고문헌 -->
     <section id="references">
