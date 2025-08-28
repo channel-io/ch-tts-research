@@ -479,7 +479,7 @@
     <div class="divider"></div>
 
     <section id="grpo" class="grpo-section">
-      <h2>GRPO Reward (초기 우리 모델의 학습 목표)</h2>
+      <h2>강화학습으로 더 잘하는 모델 만들기</h2>
     
       <div class="eq-card">
         <p class="eq-title">Objective</p>
@@ -618,14 +618,35 @@
       </p>
     </div>
 
+      <div class="divider"></div>
+  <section id="future-work">
+    <h2>Future Work</h2>
+    <div class="footer-text">
+      <p>
+        본 연구에서는 GRPO와 DPO 기반의 학습을 통해 상담사향 발화를 개선할 수 있음을 확인했습니다. 
+        그러나 여전히 <strong>prosody를 정량적으로 반영할 수 있는 보상 함수 설계</strong>는 남아 있는 과제입니다.
+      </p>
+      <p>
+        향후 연구에서는 <strong>발화 유사도 기반 지표(예: WeSpeaker)</strong>를 활용해 prosody를 더 직접적으로 반영하거나, 
+        <strong>휴먼 평가 데이터</strong>를 RL 보상에 결합하는 방향을 모색할 예정입니다. 
+        또한 전화 상담 환경에서의 <strong>잡음·중단·혼합언어</strong> 발화에 대한 강건성을 확보하는 것도 중요한 목표입니다.
+      </p>
+      <p>
+        추가적으로 <strong>data curation</strong>을 정교하게 수행하여 [4]와 같은 
+        고품질 데이터 기반 훈련 방식을 적용하는 것도 중요한 향후 연구 방향입니다.
+      </p>
+    </div>
+  </section>
+
+
     <!-- 참고문헌 -->
     <section id="references">
       <h2>참고문헌</h2>
       <div class="footer-text">
         <p>[1] Ye, Zhen, et al. "Llasa: Scaling train-time and inference-time compute for llama-based speech synthesis." arXiv preprint arXiv:2502.04128 (2025).</p>
         <p>[2] Karita, Shigeki, Richard Sproat, and Haruko Ishikawa. "Lenient evaluation of Japanese speech recognition: Modeling naturally occurring spelling inconsistency." arXiv preprint arXiv:2306.04530 (2023).</p>
-        <p>[3] Shao, Zhihong, et al. "Deepseekmath: Pushing the limits of mathematical reasoning in open language models." arXiv preprint arXiv:2402.03300 (2024).
-        </p>
+        <p>[3] Shao, Zhihong, et al. "Deepseekmath: Pushing the limits of mathematical reasoning in open language models." arXiv preprint arXiv:2402.03300 (2024).</p>
+        <p>[4] Darefsky, Jordan, Ge Zhu, and Zhiyao Duan. "Parakeet." 2024. Available at: <a href="https://jordandarefsky.com/blog/2024/parakeet/" target="_blank">https://jordandarefsky.com/blog/2024/parakeet/</a></p>
       </div>
     </section>
 
