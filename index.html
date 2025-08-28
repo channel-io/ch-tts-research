@@ -67,9 +67,9 @@
     <!-- 듣기 비교 -->
     <section id="listen" class="listen">
       <h2>오디오 비교</h2>
+      <div class="divider"></div>
       <!--<p class="note"></p>*전화는 8Khz이기 때문에 모두 <strong>8Khz로 변환</strong>하였습니다.</p>-->
 
-      <div class="divider"></div>
       <!-- Row 1 -->
       <div class="utterance-block">
         안녕하세요 채널톡 AI 에이전트 알프입니다.
@@ -100,7 +100,6 @@
           </div>
         </div>
       </div>
-      <div class="divider"></div>
 
       <!-- Row 2 -->
       <div class="utterance-block">
@@ -132,7 +131,6 @@
           </div>
         </div>
       </div>
-      <div class="divider"></div>
 
       <!-- Row 3 -->
       <div class="utterance-block">
@@ -187,13 +185,16 @@
     
       <p>
         이를 개선하기 위해 공개/합성 데이터를 활용해 <strong>SFT(Supervised Fine-Tuning)</strong>을 수행하고,
-        <strong>GRPO,DPO 등 RL</strong>을 추가 수행하여 실제 상담 시나리오에 적합한
-        <strong>상담사형 발화(prosody)</strong>를 구현하는 방법을 제안합니다.
-        이 페이지에서는 저희가 결과를 도출하기까지 직면했던 다양한 도전과제들과, 이를 해결하기 위해 어떤 고민과 노력을 기울였는지를 상세히 소개하고자 합니다.
+        <strong>GRPO,DPO 등 RL 기반의 post-training</strong>을 추가 수행하여 실제 상담 시나리오에 적합한
+        <strong>상담사향 발화(prosody)</strong>를 구현하는 방법을 제안합니다.
+        이 페이지에서는 저희가 결과를 도출하기까지 직면했던 다양한 도전과제들과 이를 해결하기 위해 어떤 고민과 노력을 기울였는지를 소개하고자 합니다.
       </p>
     </div>
 
+    <div class="divider"></div>
     <!-- Benchmark chart -->
+
+    <h2>자체 벤치마크 성능 비교</h2>
     <figure class="chart">
       <img
         src="static/img/benchmark-normal.png"
@@ -201,21 +202,19 @@
         loading="lazy"
       />
       <figcaption>
-        <strong>그림 1.</strong> Channel TTS와 글로벌 TTS 경쟁모델들의 음성발화 벤치마크 성능 비교. 낮을수록 성능이 좋습니다. 우리 모델(<em>Ours</em>)은 GRPO 이후 가장 낮은 CER을 달성했습니다.
+        <strong>그림 1.</strong> Channel TTS와 글로벌 TTS 경쟁모델들의 음성발화 벤치마크 성능 (CER) 비교 으로 낮을수록 성능이 좋습니다. 자체 모델(<em>Ours</em>)은 GRPO 이후 가장 낮은 CER을 달성했습니다. 대다수가 한글로만 구성된 internal testset으로 평가하였으며, 샘플레이트를 8khz (전화음성)로 변환하지 않고 각각 Provider 모델의 원본 샘플을 사용하였습니다.
       </figcaption>
     </figure>
 
+    <h2>정성 평가</h2>
     <div class="footer-text">
       <p>
-        위 벤치마크에는 측정하기 어려운 상담사형 발화 성능이 포함되어 있지 않습니다. 저희는 대다수가 한글로만 구성된 셋으로 internal testset을 구성하였습니다. 또한 모델 간 비교에는 8khz로(전화음성) 변환하지 않고 각각 Provider 모델의 원본 샘플을 사용하였습니다.
-      </p>
-      <p>
-        이런 벤치마크에서는 특히 상담의 복잡한 발화패턴, 예를 들어 
-        <strong>숫자류 (주문번호, 날짜, 시간, 전화번호 등) </strong> 과 같이 조금만 어려워지면 못하는 경향이 있습니다. 특히 이런 류의 발화는 CER로 측정하기 어렵다는 단점이 있어 정성적으로 평가하였습니다.[2]
+        위 벤치마크에는 측정하기 어려운 상담사향 발화 성능이 포함되어 있지 않습니다. <br> 예를 들어 상담의 복잡한 발화패턴, <strong>숫자류 (주문번호, 날짜, 시간, 전화번호 등) </strong> 과 같은 류의 발화는 STT (Speech-to-Text) 모델 성능의 한계로 인해 CER로 측정하기 어렵다는 단점이 있어 정성적으로 평가하였습니다.[2]
       </p>
     </div>
 
     <div class="divider"></div>
+
       <!-- Row 1 -->
       <div class="utterance-block">
         둥둥레스토랑 성인 요금은 평일 런치 19,992원, 평일 디너 25,940원, 주말 및 공휴일은 37,771원입니다.
@@ -246,7 +245,6 @@
           </div>
         </div>
       </div>
-    <div class="divider"></div>
       <!-- Row 2 -->
       <div class="utterance-block">
         한국경제는 지난해보다 0.2%p 성장하는데 그쳤습니다.
@@ -277,11 +275,10 @@
           </div>
         </div>
       </div>
-      <div class="divider"></div>
 
       <!-- Row 3 -->
       <div class="utterance-block">
-        안녕하세요 저는 채널톡 AI 상담사 로빈입니다. 혹시 전화주신 분의 전화번호가 011-1234-1234 맞으실까요?
+        안녕하세요. 저는 채널톡 AI 상담사 로빈입니다. 혹시 전화주신 분의 전화번호가 011-1234-1234 맞으실까요?
         <div class="audios">
           <div class="col right">
             <div class="label">GPT-4o-mini-tts (sage)</div>
@@ -456,7 +453,7 @@
 
     <div class="footer-text">
       <p>
-        완벽해보이는 저희 모델 개발에도 문제가 있었습니다. 우선 저희는 기본적으로 LLM으로 speech token을 생성하는 Llasa[1] 구조를 차용했기 때문에, LLM 에서 사용하는 방식으로 바로 GRPO[3] 를 통해 학습을 수행해 보았습니다. CER은 벤치마크에서 처럼 낮아졌지만 Side-Effect 로 발화가 monotone(마치 국어책 읽는듯한) 해지는 것이 문제였습니다.
+        저희 모델 개발 과정에서 이슈가 있었습니다. 저희는 기본적으로 LLM으로 speech token을 생성하는 Llasa[1] 구조를 차용했기 때문에, LLM 에서 사용하는 방식으로 바로 GRPO[3] 를 통해 발화가 어색하거나 잘못된 fallback을 줄이기 위한 학습을 수행해 보았습니다. CER은 벤치마크에서 처럼 낮아졌지만 Side-Effect 로 발화가 monotone(마치 국어책 읽는듯한) 해지는 것이 문제였습니다.
       </p>
     </div>
 
@@ -517,10 +514,17 @@
         <p>
           본 수식의 문제점은 CER은 낮출 수 있지만 Prosody 에 대한 objective 가 없어 monotone 해지는 문제가 있다는 것입니다.
         </p>
+        </div>
         <!-- 이미지 추가 -->
-        <img src="static/img/grpo_f0_energy.png" alt="GRPO" class="grpo-image", style="width: 90%; height: auto; margin-top: 16px;">
+        <figure class="chart">
+          <img src="static/img/grpo_f0_energy.png" alt="GRPO" class="grpo-image", style="width: 90%; height: auto; margin-top: 16px;">
+          <figcaption>
+            <strong>그림 2.</strong> GRPO 전 후 생성된 발화의 에너지 레벨 비교. 
+          </figcaption>
+        </figure>
+        <div class="footer-text">
         <p>
-          baseline 은 GRPO 를 하기전 모델이고 GRPO 를 하고 난 이후의 internal testset 에서 생성된 오디오를 분석한 결과 logF0 을 보았을 떄 GRPO는 문장 내에서 저피치로 내려가는 구간이 덜하고, 평균 이상으로 유지되는 프레임이 더 많다 → 상대적으로 모노톤 억양이 나온다는 것을 확인할 수 있었습니다.
+          위 그림 2를 살펴보면 GRPO 를 하기전 모델 (baseline) 과  GRPO 를 하고 난 이후 모델의 internal testset 에서 생성된 오디오의 logF0 을 살펴보면  GRPO는 문장 내에서 저피치로 내려가는 구간이 덜하고, 평균 이상으로 유지되는 프레임이 더 많은걸 볼 수 있습니다. 이는 동일한 주파수대가 활용되며 상대적으로 <strong>  모노톤 억양</strong>이 나온다는 것을 확인할 수 있었습니다.
         </p>
       </div>
     </section>
@@ -603,7 +607,7 @@
         style="width: 90%; height: auto; margin-top: 16px;"
       />
       <figcaption>
-        <strong>그림 2.</strong> Online DPO 학습 과정. 여러 라운드의 선호도 학습을 반복함으로써 발화 자연스러움과 문자 오류율(CER) 모두 개선됨.
+        <strong>그림 3.</strong> Online DPO 학습 과정. 여러 라운드의 선호도 학습을 반복함으로써 발화 자연스러움과 문자 오류율(CER) 모두 개선됨.
       </figcaption>
     </figure>
 
