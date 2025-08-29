@@ -97,8 +97,8 @@
 
   .divider{height:1px; background:var(--line); margin:22px 0}
   .footer-text {
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
     font-size: 1rem;
     color: #273037;
     line-height: 1.7;   /* 문장 줄 간격 */
